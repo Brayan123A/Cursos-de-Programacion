@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* ----- NAVBAR ----- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #2c3e50;
+  color: #fff;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #3498db;
+}
+
+.btn-login {
+  padding: 8px 15px;
+  background: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: #2980b9;
+}
+
+/* ----- HEADER ----- */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: url(programacion.jpg);
+  background-size: cover;
+   background-position: center;
+    background-repeat: no-repeat;
+}
+
+header h1 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+#buscador {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+/* ----- CURSOS ----- */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+     
+  text-align: center;
+}
+.curso {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.curso:hover {
+  transform: scale(1.05);
+}
+
+.curso h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.curso p {
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  margin-top: 30px;
+}
+
+/* ----- MODAL LOGIN ----- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #2980b9;
+}
+
+.cerrar {
+  background: red;
+  margin-top: 10px;
+}
+
+.menu-toggle {
+  display: none; /* Oculto por defecto */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Ocultar la lista de navegación en móviles */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menu-toggle {
+    display: block; /* Muestra el botón de hamburguesa */
+  }
+
+.nav-list {
+    /* Muestra los elementos uno debajo del otro */
+    flex-direction: column; 
+    
+    /* Centra los elementos horizontalmente */
+    align-items: center; 
+    
+    /* Agrega un espacio para separar los elementos */
+    gap: 15px; 
+    
+    /* Oculta la lista de navegación por defecto */
+    display: none; 
+    
+    /* Ocupa el 100% del ancho del contenedor padre */
+    width: 100%; 
+    
+    /* Espacio superior para separarlo del botón */
+    margin-top: 10px;
+  }
+
+  /*
+   * Clase que se añade con JavaScript para mostrar el menú.
+   * La clase .show-menu hace que la lista de navegación sea visible.
+   */
+  .nav-list.show-menu {
+    display: flex;
+  }
+}
+
+.contenedor-principal {
+    position: relative;
+    z-index: 2; /* Sobre la capa oscura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Estilos de la caja del formulario */
+.formulario-caja {
+    background: rgba(230, 232, 235, 0.9); /* Fondo con transparencia */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgb(47, 69, 80);
+    transition: transform 0.3s ease-in-out;
+}
+
+.formulario-caja:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos del logo y título */
+.logo-area {
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.formulario-caja h1 {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-texto);
+}
+
+/* Estilos de los campos de entrada */
+.input-grupo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 300;
+    color: var(--color-texto);
+}
+
+.input-grupo input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-principal);
+    border-radius: 8px;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.input-grupo input:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Estilos del botón */
+.boton {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(118, 76, 158);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Estilos para alternar entre formularios */
+.toggle-links {
+    margin-top: 25px;
+}
+
+.toggle-links a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+    display: block;
+    margin-top: 10px;
+}
+
+.toggle-links a:hover {
+    color: var(--color-acento);
+}
+
+/* Clases para manejar la visibilidad de los formularios */
+.form-hidden {
+    display: none;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.form-active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
